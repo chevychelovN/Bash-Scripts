@@ -1,0 +1,31 @@
+again="True"
+name=""
+age=""
+group=""
+while [[ $again = "True" ]]
+do
+echo "enter your name: "
+read name
+if [[ -z $name || $name = 0 ]]
+then
+echo "bye"
+break
+fi
+echo "enter your age: "
+read age
+if [[ $age -eq 0 || -z $age ]]
+then
+echo "bye"
+break
+elif [[ $age -le 16 ]]
+then 
+group='child'
+elif [[ $age -le 25 && $age -ge 17 ]]
+then
+group='youth'
+elif [[ $age -gt 25 ]]
+then
+group='adult'
+fi
+echo "$name, your group is $group"
+done
